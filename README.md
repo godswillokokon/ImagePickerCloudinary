@@ -24,17 +24,18 @@ Uploading an image from mobile camara or gallery collection to cloudinary in Rea
 
 
 ## What we're building
+
 Get familiar with what we are building in the course of the tutorial.
 
 ### Setting up a React Native app.
-* Installing UI-Kitten
+
 * Installing Image Picker
+
 * Setting up UI
 
 ### Setting up Cloudinary upload presets.
 
 ### Fixing up Cloudinary with Image Picker.
-
 
 ### Features in this project are :
 

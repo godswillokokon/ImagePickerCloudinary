@@ -22,7 +22,7 @@
 
 ## Introduction
 
-Uploading an image from mobile camara or gallery collection to cloudinary in React Native will be covered in this article, we will be using hooks to manage state to display the image after it is uploaded.
+Uploading an image from mobile camera or gallery collection to cloudinary in React Native will be covered in this article, we will be using hooks to manage state to display the image after it is uploaded.
 
 
 ## What we're building

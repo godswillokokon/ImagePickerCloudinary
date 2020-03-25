@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   StyleSheet,
   View,
@@ -21,7 +21,6 @@ const App = () => {
           <Text style={styles.uploadButtonText}>Upload</Text>
         </TouchableOpacity>
       </View>
-
     </View >
   );
 };

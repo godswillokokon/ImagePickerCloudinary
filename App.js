@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   StyleSheet,
   View,
@@ -7,17 +7,61 @@ import {
   TouchableOpacity,
   Image
 } from 'react-native';
+import ImagePicker from 'react-native-image-picker';
 
 
 const App = () => {
+  const [photo, setPhoto] = useState('https://res.cloudinary.com/ogcodes/image/upload/v1581387688/m0e7y6s5zkktpceh2moq.jpg');
+
+  const selectPhotoTapped = () => {
+
+    const options = {
+      title: 'Select Photo',
+      storageOptions: {
+        skipBackup: true,
+        path: 'images',
+      },
+    };
+    ImagePicker.showImagePicker(options, (response) => {
+      // console.log('Response = ', response);
+      if (response.didCancel) {
+        console.log('User cancelled image picker');
+      } else if (response.error) {
+        console.log('ImagePicker Error: ', response.error);
+      } else {
+        const source = {
+          uri: response.uri,
+          type: response.type,
+          name: response.fileName,
+        }
+        handleUpload(source)
+      }
+    });
+  }
+  const handleUpload = (photo) => {
+    const data = new FormData()
+    data.append('file', photo)
+    data.append('upload_preset', 'ogcodes')
+    data.append("cloud_name", "ogcodes")
+    fetch("https://api.cloudinary.com/v1_1/ogcodes/upload", {
+      method: "post",
+      body: data
+    }).then(res => res.json()).
+      then(data => {
+        setPhoto(data.secure_url)
+      }).catch(err => {
+        Alert.alert("An Error Occured While Uploading")
+      })
+  }
+
   return (
     <View>
       <View style={styles.imageContainer}>
-        <Image source={{ uri: 'https://res.cloudinary.com/ogcodes/image/upload/v1581387688/m0e7y6s5zkktpceh2moq.jpg' }} style={styles.backgroundImage}></Image>
+        <Image source={{ uri: photo }} style={styles.backgroundImage}></Image>
       </View>
       <View style={styles.uploadContainer}>
         <Text style={styles.uploadContainerTitle}>ImagePicker to Cloudinary</Text>
-        <TouchableOpacity style={styles.uploadButton}>
+        <TouchableOpacity onPress={selectPhotoTapped} style={styles.uploadButton}>
           <Text style={styles.uploadButtonText}>Upload</Text>
         </TouchableOpacity>
       </View>
@@ -45,7 +89,7 @@ const styles = StyleSheet.create({
   },
   uploadContainerTitle: {
     alignSelf: 'center',
-    fontSize: 30,
+    fontSize: 25,
     margin: 20,
     fontFamily: 'Roboto'
   },

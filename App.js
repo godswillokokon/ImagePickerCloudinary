@@ -5,7 +5,7 @@ import {
   Text,
   Dimensions,
   TouchableOpacity,
-  Image
+  Image,
 } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 
@@ -13,8 +13,8 @@ import ImagePicker from 'react-native-image-picker';
 const App = () => {
   const [photo, setPhoto] = useState('https://res.cloudinary.com/ogcodes/image/upload/v1581387688/m0e7y6s5zkktpceh2moq.jpg');
 
-  const selectPhotoTapped = () => {
 
+  const selectPhotoTapped = () => {
     const options = {
       title: 'Select Photo',
       storageOptions: {
@@ -23,6 +23,7 @@ const App = () => {
       },
     };
     ImagePicker.showImagePicker(options, (response) => {
+
       // console.log('Response = ', response);
       if (response.didCancel) {
         console.log('User cancelled image picker');
@@ -49,6 +50,7 @@ const App = () => {
     }).then(res => res.json()).
       then(data => {
         setPhoto(data.secure_url)
+
       }).catch(err => {
         Alert.alert("An Error Occured While Uploading")
       })

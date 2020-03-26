@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   },
   uploadContainerTitle: {
     alignSelf: 'center',
-    fontSize: 30,
+    fontSize: 25,
     margin: 20,
     fontFamily: 'Roboto'
   },

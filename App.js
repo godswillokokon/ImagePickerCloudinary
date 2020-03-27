@@ -35,11 +35,11 @@ const App = () => {
           type: response.type,
           name: response.fileName,
         }
-        handleUpload(source)
+        cloudinaryUpload(source)
       }
     });
   }
-  const handleUpload = (photo) => {
+  const cloudinaryUpload = (photo) => {
     const data = new FormData()
     data.append('file', photo)
     data.append('upload_preset', 'ogcodes')

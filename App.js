@@ -15,7 +15,7 @@ const App = () => {
   return (
     <View>
       <View style={styles.imageContainer}>
-        <Image source={{ uri: 'https://res.cloudinary.com/ogcodes/image/upload/v1581387688/m0e7y6s5zkktpceh2moq.jpg' }} style={styles.backgroundImage}></Image>
+        <Image source={{ uri: 'https://res.cloudinary.com/ogcodes/image/upload/v1581387688/m0e7y6s5zkktpceh2moq.jpg' }} style={styles.backgroundImage} />
       </View>
       <View style={styles.uploadContainer}>
         <Text style={styles.uploadContainerTitle}>ImagePicker to Cloudinary</Text>

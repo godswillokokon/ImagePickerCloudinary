@@ -13,7 +13,13 @@
 
 ### Tools Required
 
-* Andriod Stuido, Xcode, VSCode. I will be using VSCode, you can download here: https://bit.ly/vscodeDownload.
+* Node >= v13.0.0
+
+* React >= v16.9.0
+
+* React Native CLI >= v0.61.5
+
+* Andriod Stuido, VSCode. I will be using VSCode, you can download here: https://bit.ly/vscodeDownload.
 
 * If you are using VSCode, I would recommend Lights Out theme by Nedy : https://bit.ly/NedyLightsOut
 

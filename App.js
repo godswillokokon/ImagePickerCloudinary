@@ -9,7 +9,9 @@ import {
 } from 'react-native';
 
 
+
 const App = () => {
+
   return (
     <View>
       <View style={styles.imageContainer}>

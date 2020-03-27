@@ -19,7 +19,7 @@
 
 * React Native CLI >= v0.61.5
 
-* Andriod Stuido, Xcode, VSCode. I will be using VSCode, you can download here: https://bit.ly/vscodeDownload.
+* Andriod Stuido, VSCode. I will be using VSCode, you can download here: https://bit.ly/vscodeDownload.
 
 * If you are using VSCode, I would recommend Lights Out theme by Nedy : https://bit.ly/NedyLightsOut
 

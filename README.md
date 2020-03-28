@@ -21,7 +21,7 @@
 
 * Andriod Stuido, VSCode. I will be using VSCode, you can download here: https://bit.ly/vscodeDownload.
 
-* f you are using VSCode, I would recommend Lights Out theme by Nedy, lovely  theme: https://bit.ly/NedyLightsOut
+* If you are using VSCode, I would recommend Lights Out theme by Nedy, lovely  theme: https://bit.ly/NedyLightsOut
 
 * Cloudinary Dashboard. You can signup here if you do not have an account: https://bit.ly/cloudinarySignup.
 

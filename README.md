@@ -1,6 +1,8 @@
 # React Native: ImagePicker to Cloudinary.
 **TL:DR: ** Learn how to upload images to cloudinary in React Native.
 
+![](git.gif)
+
 ## Prerequisites
 
 * Familiar React Native elementary setup, if not get started here : https://bit.ly/react-native-how-to-setup-your-first-app , 

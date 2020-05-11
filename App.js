@@ -9,10 +9,8 @@ import {
 } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 
-
 const App = () => {
   const [photo, setPhoto] = useState('https://res.cloudinary.com/ogcodes/image/upload/v1581387688/m0e7y6s5zkktpceh2moq.jpg');
-
 
   const selectPhotoTapped = () => {
     const options = {
@@ -23,23 +21,26 @@ const App = () => {
       },
     };
     ImagePicker.showImagePicker(options, (response) => {
-
       // console.log('Response = ', response);
       if (response.didCancel) {
         console.log('User cancelled image picker');
       } else if (response.error) {
         console.log('ImagePicker Error: ', response.error);
       } else {
+        const uri = response.uri;
+        const type = response.type;
+        const name = response.fileName;
         const source = {
-          uri: response.uri,
-          type: response.type,
-          name: response.fileName,
+          uri,
+          type,
+          name,
         }
         cloudinaryUpload(source)
       }
     });
   }
   const cloudinaryUpload = (photo) => {
+    console.log(photo.uri)
     const data = new FormData()
     data.append('file', photo)
     data.append('upload_preset', 'ogcodes')
@@ -50,7 +51,6 @@ const App = () => {
     }).then(res => res.json()).
       then(data => {
         setPhoto(data.secure_url)
-        console.log(data.secure_url)
       }).catch(err => {
         Alert.alert("An Error Occured While Uploading")
       })

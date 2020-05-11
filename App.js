@@ -50,7 +50,7 @@ const App = () => {
     }).then(res => res.json()).
       then(data => {
         setPhoto(data.secure_url)
-
+        console.log(data.secure_url)
       }).catch(err => {
         Alert.alert("An Error Occured While Uploading")
       })
